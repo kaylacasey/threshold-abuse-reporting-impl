@@ -1,3 +1,3 @@
 # Threshold Abuse Reporting Implementation
 
-This is the implementation and benchmarking of Threshold Abuse Reporting
+This is the implementation of Threshold Abuse Reporting.
