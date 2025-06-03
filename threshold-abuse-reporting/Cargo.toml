@@ -4,3 +4,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+blstrs = "0.7.1"
+curve25519-dalek = { version = "4.1.3", features = ["precomputed-tables", "alloc", "zeroize", "rand_core", "digest", "group"] }
+group = "0.13.0"
+rand = "0.8.5"
+sha2 = "0.10.9"
+
+# Optional: ensure no other rand_core gets pulled in
+[patch.crates-io]
+rand_core = "0.6.4"
