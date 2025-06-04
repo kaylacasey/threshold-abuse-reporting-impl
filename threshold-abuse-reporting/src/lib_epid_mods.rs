@@ -51,7 +51,7 @@ pub struct SignatureBase {
 pub struct EPIDSignature {
     pub base: SignatureBase,
     pub subset_proofs: Vec<ZKSubsetProof>,
-    pub kh: Option<Scalar>,
+    pub kh: Option<Scalar>, //not using this anymore i think
 }
 
 // zkp placeholder
@@ -114,11 +114,13 @@ pub fn sign(
     let _b = sk.y + _a * sk.x;
     let T = sk.A;
 
-    let c = Scalar::random(&mut OsRng);
-    let sx = Scalar::random(&mut OsRng);
-    let sf = Scalar::random(&mut OsRng);
-    let sa = Scalar::random(&mut OsRng);
-    let sb = Scalar::random(&mut OsRng);
+    let rx = Scalar::random(&mut OsRng);
+    let rf = Scalar::random(&mut OsRng);
+    let ra = Scalar::random(&mut OsRng);
+    let rb = Scalar::random(&mut OsRng);
+    
+    //let c = Scalar::random(&mut OsRng);
+
 
     let mut subset_proofs = vec![];
     let subsets = sig_rl.chunks(t);
